@@ -51,8 +51,8 @@ ALLOWED_EXTENSIONS = set(['pdf'])
 #       Windows:   $env:DB_PASS = 'ourpassword'
 #       Windows:   set DB_PASS=ourpassword
 #       Mac:       export DB_PASS=ourpassword
-db_ip = '35.221.39.35' #internreq database
-db_password = os.environ.get('DB_PASS')
+db_ip = 'localhost' #internreq database
+db_password = 'Baec11072793.'
 db_user = 'root'
 db_name = 'internreq'
 db_connection_name = 'birmingham4test:us-east4:internreq-1'
@@ -168,22 +168,6 @@ def load_user(id):
     user = User(user_id, email, password, role, name, last_login)
     return (user)
 #   End manager
-
-# Error Pages Routes
-@app.errorhandler(404)
-def page_not_found(a):
-    # This route is for handling when an incorrect url is typed
-    return render_template('404.html', title=app_title)
-  
-@app.errorhandler(500)
-def server_error(b):
-    # This route is for handling when an internal server error occurs
-    return render_template('500.html', title=app_title)
-
-@app.errorhandler(Exception)
-def all_other_errors(c):
-    # This route is for catching all non 404 or 500 errors
-    return render_template('Exception.html', title=app_title)
 
 # Landing Page Route 
 @app.route('/')
@@ -557,6 +541,7 @@ def createPosting():
             args = (0, current_user.id, title, location,
                     overview, repsons, reqs, comp, jType, hours)
             db.query('PUSH', sql, args)
+            flash('Worked')
             return redirect('/profile/'+str(current_user.id))
         return(render_template('posting.html', title='Create Posting | '+app_title, form=form))
     return(render_template('unauthorized.html'))
@@ -603,4 +588,4 @@ def search_handler():
 
 if (__name__ == "__main__"):
     if os.environ.get('GAE_ENV') != 'standard': # if not deployed to the app engine
-        app.run(host='0.0.0.0', port='8080', debug=True)
+        app.run(host='localhost', port='8080', debug=True)
