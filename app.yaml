@@ -17,7 +17,7 @@ handlers:
   secure: always
 
 env_variables:
-  MAIL_PASS: internreq
-  DB_PASS: GearGrinders1!
-  DB_CONNECTION: birmingham4test:us-east4:internreq-1
-  CLOUD_STORAGE_BUCKET: birmingham4test.appspot.com
+  MAIL_PASS: <MAIL PASSWORD>
+  DB_PASS: <DATABSE PASSWORD>
+  DB_CONNECTION: <YOUR CONNECTION HERE>
+  CLOUD_STORAGE_BUCKET: <YOUR PASSWORD HERE
