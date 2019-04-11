@@ -34,7 +34,7 @@ app.config.update(dict(
     MAIL_PORT=587,
     MAIL_USE_TLS=True,
     MAIL_USE_SSL=False,
-    MAIL_USERNAME='chrisddhnt@gmail.com',
+    MAIL_USERNAME='<GMAIL ACCOUNT>',
     MAIL_PASSWORD=os.environ.get('MAIL_PASS')
 ))
 app.config.from_object(__name__)
@@ -52,10 +52,10 @@ ALLOWED_EXTENSIONS = set(['pdf'])
 #       Windows:   set DB_PASS=ourpassword
 #       Mac:       export DB_PASS=ourpassword
 db_ip = 'localhost' #internreq database
-db_password = 'Baec11072793.'
+db_password = ''
 db_user = 'root'
-db_name = 'internreq'
-db_connection_name = 'birmingham4test:us-east4:internreq-1'
+db_name = ''
+db_connection_name = ''
 
 # When deployed to App Engine, the `GAE_ENV` environment variable will be
 # set to `standard`
